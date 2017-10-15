@@ -1,0 +1,56 @@
+<textarea readonly>
+    let fruits1:string[] = ["apple","mango","banana"];
+    this.fruits1 = fruits1;
+
+    let fruits2:string[] = []
+    fruits2.push("apple");
+    fruits2.push("mango");
+    fruits2.push("banana");
+    this.fruits2 = fruits2;
+
+    let nums1: Array<number> = [1,2,3];
+    this.nums1 = nums1;
+
+    let nums2: Array<number> = new Array<number>();
+    nums2.push(1);
+    nums2.push(2);
+    nums2.push(3);
+    this.nums2 = nums2;
+</textarea>
+
+<div *ngIf="fruits1">
+  <h3>fruits1</h3>
+  <ul>
+    <span *ngFor="let fruit of fruits1; let i=index;">
+      {{fruit}}
+      <label *ngIf="i+1<fruits1.length">,</label>
+    </span>
+  </ul>
+</div>
+<div *ngIf="fruits1">
+  <h3>fruits2</h3>
+  <ul>
+    <span *ngFor="let fruit of fruits2; let i=index;">
+      {{fruit}}
+      <label *ngIf="i+1<fruits2.length">,</label>
+    </span>
+  </ul>
+</div>
+<div *ngIf="nums1">
+  <h3>nums1</h3>
+  <ul>
+    <span *ngFor="let num of nums1; let i=index;">
+      {{num}}
+      <label *ngIf="i+1<nums1.length">,</label>
+    </span>
+  </ul>
+</div>
+<div *ngIf="nums2">
+  <h3>num2</h3>
+  <ul>
+    <span *ngFor="let num of nums2; let i=index;">
+      {{num}}
+      <label *ngIf="i+1<nums2.length">,</label>
+    </span>
+  </ul>
+</div>
